@@ -10,6 +10,6 @@
 	<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-justify">
 		<h1 class="text-center"><%= @post.title %></h1>
 		<p class="text-center"><%= @post.display_day_published %></p>
-		<%= @post.body %>
+		<%= @post.body.html_safe %>
 	</div>
 </div>
