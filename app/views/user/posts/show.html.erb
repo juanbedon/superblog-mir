@@ -1,0 +1,15 @@
+<% provide(:page_title, @post.title) %>
+<% provide(:user, 'active') %>
+
+<div>
+	<%= link_to 'Edit', edit_user_post_path(@post), class: 'btn btn-sm btn-info' %>
+	<%= link_to 'Remove', user_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+</div>
+
+<div class="row">
+	<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-justify">
+		<h1 class="text-center"><%= @post.title %></h1>
+		<p class="text-center"><%= @post.display_day_published %></p>
+		<%= @post.body %>
+	</div>
+</div>

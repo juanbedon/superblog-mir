@@ -1,0 +1,16 @@
+<% provide(:page_title, 'All Posts') %>
+<% provide(:user, 'active') %>
+
+<div class="row">
+	<div>
+		<%= link_to 'New Post', new_user_post_path, class: 'btn btn-sm btn-primary' %>
+	</div>
+	<br>
+	<br>
+	<table class="table table-striped">
+		<tr>
+			<th colspan="4">Title</th>
+		</tr>
+  	<%= render @posts %>
+	</table>
+</div>
