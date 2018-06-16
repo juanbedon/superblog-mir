@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_for :users
 	root to: 'blog/posts#index'
 
-	namespace :user do
+	namespace :users do
   	resources :posts
 	end
 

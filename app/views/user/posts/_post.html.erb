@@ -1,6 +1,0 @@
-<tr>
-	<td><%= link_to post.title, user_post_path(post) %></td>
-	<td></td>
-	<td><%= link_to 'Edit', edit_user_post_path(post), class: 'btn btn-sm btn-info' %></td>
-	<td><%= link_to 'Remove', user_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
-</tr>

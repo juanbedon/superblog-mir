@@ -2,8 +2,8 @@
 <% provide(:user, 'active') %>
 
 <div>
-	<%= link_to 'Edit', edit_user_post_path(@post), class: 'btn btn-sm btn-info' %>
-	<%= link_to 'Remove', user_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+	<%= link_to 'Edit', edit_users_post_path(@post), class: 'btn btn-sm btn-info' %>
+	<%= link_to 'Remove', users_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
 </div>
 
 <div class="row">
