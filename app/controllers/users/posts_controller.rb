@@ -1,7 +1,7 @@
 module Users
 
 	class PostsController < UserController
-	  before_action :set_post, only: [:show, :edit, :update, :destroy]
+	  before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
 	  # GET /posts
 	  # GET /posts.json
@@ -21,6 +21,22 @@ module Users
 
 	  # GET /posts/1/edit
 	  def edit
+	  end
+
+	  def publish
+
+	  	@post.publish
+
+	  	redirect_to users_posts_url
+
+	  end
+
+	  def unpublish
+
+	  	@post.unpublish
+
+	  	redirect_to users_posts_url
+
 	  end
 
 	  # POST /posts
@@ -58,7 +74,7 @@ module Users
 	  def destroy
 	    @post.destroy
 	    respond_to do |format|
-	      format.html { redirect_to user_posts_url, notice: 'Post was successfully destroyed.' }
+	      format.html { redirect_to users_posts_url, notice: 'Post was successfully destroyed.' }
 	      format.json { head :no_content }
 	    end
 	  end
