@@ -7,19 +7,31 @@ module Users
 
 		def update_info
 
-			current_user.update(user_info_params)
-			redirect_to users_account_path
+			if current_user.update(user_info_params)
+				flash[:success] = 'Successfully saved info'
+			else
+				flash[:danger] = current_user.display_error_messages
+			end
+
+				redirect_to users_account_path
 
 		end
 
 		def change_password
 
-			if current_user.valid_password?(user_password_params[:current_password])
-				current_user.update(
-					password: user_password_params[:new_password],
-					password_confirmation: user_password_params[:new_password_confirmation]
-				)
+			user = current_user
+
+			if user.valid_password?(user_password_params[:current_password])
+				if user.change_password(user_password_params)
+					sign_in(user, bypass: true)
+					flash[:success] = 'Successfully changed password'
+				else
+					flash[:danger] = user.display_error_messages
+				end
+			else
+				flash[:danger] = 'Current password was incorrect.'
 			end
+			redirect_to users_account_path
 
 		end
 
