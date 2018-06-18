@@ -19,6 +19,14 @@
 			color: $primary-color-text !important;
 		}
 	}
+	.nav-item.user-nav {
+		img {
+			height: 23px;
+			width: 23px;
+			border-radius: 50%;
+			border: 1px solid $primary-color-light;
+		}
+	}
 }
 
 .collapse-bg {

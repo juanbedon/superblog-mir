@@ -17,9 +17,10 @@
           <%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %>
         </li>
         <% if user_signed_in? %>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown user-nav">
             <a class="nav-link dropdown-toggle <%= yield(:user) %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              User
+              <%= image_tag(current_user.gravatar_image_url) %>
+              <%= current_user.display_name.titleize %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to 'My Posts', users_posts_path, class: "dropdown-item" %>

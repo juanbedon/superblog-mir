@@ -7,6 +7,12 @@
 		<h6 class="text-center"><%= @post.display_day_published %></h6>
 		<%= @post.body.html_safe %>
 
+		<div class="user-bio text-center">
+			<%= image_tag(@post.user.gravatar_image_url) %>
+			<h5><%= @post.user.name %></h5>
+			<h6 class="bio text-justify"><%= @post.user.bio %></h6>
+		</div>
+
 		<div id="disqus_thread"></div>
 		<noscript>
 			Please enable JavaScript to view the

@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
   has_many :posts
 
-  validates_presence_of :name, on: :update
+  #validates_presence_of :name, on: :update
 
   def change_password(attrs)
   	update(password: attrs[:new_password], password_confirmation: attrs[:new_password_confirmation])
@@ -34,6 +34,16 @@ class User < ApplicationRecord
 
   def gravatar_image_url
   	"https://www.gravatar.com/avatar/#{gravatar_hash}"
+  end
+
+  def display_name
+
+    if name.present?
+      name
+    else
+      "User"
+    end
+    
   end
 
   private

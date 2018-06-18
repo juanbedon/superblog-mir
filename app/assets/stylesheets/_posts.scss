@@ -71,6 +71,26 @@
 	}
 }
 
+.posts.show {
+	.user-bio {
+		background-color: $primary-color-text;
+		padding: 10px 40px;
+		border: 1px solid $divider-color;
+		border-radius: 5px;
+		margin: 30px 0;
+		img {
+			border-radius: 50%;
+		}
+		img, h5 {
+			margin-bottom: 10px;
+		}
+		h5 {
+			font-weight: bolder;
+			font-size: 22px;
+		}
+	}
+}
+
 @media screen and (min-width: 34em) {
 	.posts.index .card {
 		height: 440px;
