@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,11 +17,15 @@
           <%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %>
         </li>
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to 'My Posts', users_posts_path, class: "nav-link #{yield(:user)}" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle <%= yield(:user) %>" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              User
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to 'My Posts', users_posts_path, class: "dropdown-item" %>
+              <%= link_to 'Account', '#', class: "dropdown-item" %>
+              <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
           </li>
         <% end %>
       </ul>
