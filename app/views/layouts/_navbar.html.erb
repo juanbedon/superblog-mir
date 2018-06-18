@@ -23,7 +23,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <%= link_to 'My Posts', users_posts_path, class: "dropdown-item" %>
-              <%= link_to 'Account', '#', class: "dropdown-item" %>
+              <%= link_to 'Account', users_account_path, class: "dropdown-item" %>
               <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
