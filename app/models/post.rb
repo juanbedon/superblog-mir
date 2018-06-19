@@ -21,7 +21,11 @@ class Post < ApplicationRecord
 
 	belongs_to :user
 
-	PER_PAGE = 3
+	validates :body, presence: true, length: { minimum: 250 }
+	validates :title, presence: true
+	validates :banner_image_url, presence: true
+
+	PER_PAGE = 6
 
 	scope :most_recent, -> { order(published_at: :desc) }
 	scope :published, -> { where(published: true) }
@@ -35,9 +39,9 @@ class Post < ApplicationRecord
 
 	def display_day_published
 		if published_at.present?
-			"Published #{published_at.strftime('%-b %-d, %Y')}"
+			"Publicado en #{published_at.strftime('%-b %-d, %Y')}"
 		else
-			'~ Not published yet ~'
+			"• Not published yet •"
 		end
 	end
 

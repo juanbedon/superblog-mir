@@ -2,13 +2,17 @@
 
   <% if post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+      <div class="alert alert-danger" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h4>
+        <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
@@ -41,7 +45,7 @@
           </li>
           <li class="list-group-item">
             <div class="actions">
-              <%= form.submit "Save blog post", class: 'btn btn-success btn-block' %>
+              <%= form.submit "Save Post", class: 'btn btn-success btn-block' %>
             </div>
           </li>
         </ul>

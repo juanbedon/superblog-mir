@@ -8,7 +8,7 @@ module Users
 		def update_info
 
 			if current_user.update(user_info_params)
-				flash[:success] = 'Successfully saved info'
+				flash[:success] = 'Succesfully saved info.'
 			else
 				flash[:danger] = current_user.display_error_messages
 			end
@@ -24,7 +24,7 @@ module Users
 			if user.valid_password?(user_password_params[:current_password])
 				if user.change_password(user_password_params)
 					sign_in(user, bypass: true)
-					flash[:success] = 'Successfully changed password'
+					flash[:success] = 'Succesfully changed password.'
 				else
 					flash[:danger] = user.display_error_messages
 				end

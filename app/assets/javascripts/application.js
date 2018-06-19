@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require tether
 //= require rails-ujs
 //= require bootstrap
 //= require turbolinks
@@ -21,7 +22,20 @@ document.addEventListener("turbolinks:load", function() {
 	tinymce.init({
 		height: '400',
 		selector: 'textarea#post_body',
-		plugins: 'codesample image media link code',
+		plugins: 'codesample image media link code textpattern',
+		textpattern_patterns: [
+    	{start: '*', end: '*', format: 'italic'},
+     	{start: '**', end: '**', format: 'bold'},
+     	{start: '#', format: 'h1'},
+	    {start: '##', format: 'h2'},
+      {start: '###', format: 'h3'},
+      {start: '####', format: 'h4'},
+      {start: '#####', format: 'h5'},
+      {start: '######', format: 'h6'},
+      {start: '1. ', cmd: 'InsertOrderedList'},
+      {start: '* ', cmd: 'InsertUnorderedList'},
+      {start: '- ', cmd: 'InsertUnorderedList'}
+    ],
 		toolbar: 'undo redo | styleselect | bold italic link | codesample image media | code'
 	});
 });

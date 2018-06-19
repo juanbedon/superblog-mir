@@ -26,7 +26,8 @@ class User < ApplicationRecord
 
   has_many :posts
 
-  #validates_presence_of :name, on: :update
+  validates_presence_of :name, on: :update
+  validates_presence_of :email, on: :update
 
   def change_password(attrs)
   	update(password: attrs[:new_password], password_confirmation: attrs[:new_password_confirmation])

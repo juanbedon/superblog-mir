@@ -1,3 +1,6 @@
+<% provide(:page_title, "My Profile") %>
+<% provide(:user, 'active') %>
+
 <div class="row">
   <%= form_tag users_info_path, method: :put do %>
     <%= fields_for :user do |f| %>
@@ -6,11 +9,11 @@
         <div class="card">
           <div class="card-body">
             <div class="card-title">
-              Basic info
+              <h5 class="text-center">Info</h5>
             </div>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">
+            <li class="list-group-item mx-auto">
               <%= image_tag(current_user.gravatar_image_url) %>
             </li>
             <li class="list-group-item">
@@ -22,7 +25,7 @@
             <li class="list-group-item">
               <div class="field">
                 <%= f.label :email %>
-                <%= f.text_field :email, value: current_user.email, class: 'form-control' %>
+                <%= f.email_field :email, value: current_user.email, class: 'form-control' %>
               </div>
             </li>
             <li class="list-group-item">
@@ -48,7 +51,7 @@
         <div class="card">
           <div class="card-body">
             <div class="card-title">
-              Change Password
+              <h5 class="text-center">Change Password</h5>
             </div>
           </div>
           <ul class="list-group list-group-flush">

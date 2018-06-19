@@ -4,6 +4,11 @@
 <div>
 	<%= link_to 'Edit', edit_users_post_path(@post), class: 'btn btn-sm btn-info' %>
 	<%= link_to 'Remove', users_post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+	<% if @post.published? %>
+		<td><%= link_to 'Unpublish', unpublish_users_post_path(@post), method: :put, class: 'btn btn-sm btn-secondary' %></td>
+	<% else %>
+		<td><%= link_to 'Publish', publish_users_post_path(@post), method: :put, class: 'btn btn-sm btn-success' %></td>
+	<% end %>
 </div>
 
 <div class="row">

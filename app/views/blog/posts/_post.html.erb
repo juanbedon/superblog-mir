@@ -7,7 +7,7 @@
 	    <h5 class="card-title"><%= link_to post.title, post %></h5>
 	    <h6 class="published-date"><%= post.display_day_published %></h6>
 	    <%= link_to post do %>
-	    	<p class="card-text text-justify"><%= truncate(post.body, length: 250) %></p>
+	    	<p class="card-text text-justify"><%= post.body.truncate(255).html_safe %></p>
 	    <% end %>
 	  </div>
 	</div>

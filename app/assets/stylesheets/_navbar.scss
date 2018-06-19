@@ -13,6 +13,9 @@
 	.navbar-toggler {
 		outline: none;
 	}
+	.navbar-brand:hover {
+	  color: $accent-color;
+	}
 	.nav-link {
 		color: $primary-color-light !important;
 		&.active {
