@@ -39,7 +39,7 @@ class Post < ApplicationRecord
 
 	def display_day_published
 		if published_at.present?
-			"Publicado en #{published_at.strftime('%-b %-d, %Y')}"
+			"Published #{published_at.strftime('%-b %-d, %Y')}"
 		else
 			"• Not published yet •"
 		end

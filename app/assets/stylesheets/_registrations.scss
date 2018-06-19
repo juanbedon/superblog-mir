@@ -1,0 +1,17 @@
+.registrations.new, .sessions.new, .passwords.new {
+	h2 {
+		font-weight: bolder;
+		margin: 10px 0;
+	}
+	.btn {
+		background-color: $primary-color;
+		color: $primary-color-text;
+		margin: 10px 0 20px;
+	}
+	.field {
+		margin-bottom: 20px;
+	}
+	a {
+		text-decoration: none;
+	}
+}
